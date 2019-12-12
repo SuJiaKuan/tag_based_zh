@@ -219,6 +219,8 @@ def get_full_exp(numbers, targets, operations, op_dict, max_depth):
     return expressions
 
 def clipped_passage_num(number_indices, number_len, numbers_in_passage, plen):
+    if not number_indices:
+        return number_indices, number_len, numbers_in_passage
     if number_indices[-1] < plen:
         return number_indices, number_len, numbers_in_passage
     lo = 0
